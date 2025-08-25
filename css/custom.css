@@ -105,3 +105,45 @@ body {
     --secondary-color: #000000 !important;
     --accent-color: #FF0000 !important;
 }
+
+/* FORCER LE LOGO LIBERCHAT */
+.welcome-page-logo, .watermark, .brand-watermark, .logo {
+    background-image: url('../images/liberchat-logo.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 120px !important;
+    height: 60px !important;
+    display: block !important;
+}
+
+/* FORCER LES COULEURS PARTOUT */
+* {
+    --primary-color: #8B0000 !important;
+    --secondary-color: #000000 !important;
+    --accent-color: #FF0000 !important;
+}
+
+/* ARRIÈRE-PLAN PRINCIPAL */
+#react, .App, .welcome-page, .premeeting-screen {
+    background: linear-gradient(135deg, #000000, #8B0000) !important;
+}
+
+/* TITRE PRINCIPAL VISIBLE */
+.welcome-page h1, .premeeting-screen h1, .welcome-page-title {
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+    font-weight: bold !important;
+}
+
+/* BOUTONS ROUGES VISIBLES */
+button, .button, .primary-button, .secondary-button {
+    background-color: #8B0000 !important;
+    border: 2px solid #FF0000 !important;
+    color: white !important;
+}
+
+button:hover, .button:hover, .primary-button:hover {
+    background-color: #FF0000 !important;
+    border-color: #8B0000 !important;
+}
