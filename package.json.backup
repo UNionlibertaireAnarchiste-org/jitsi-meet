@@ -1,7 +1,7 @@
 {
-  "name": "liberchat-video",
+  "name": "jitsi-meet",
   "version": "0.0.0",
-  "description": "Application de vidéoconférence LiberChat",
+  "description": "A sample app for the Jitsi Videobridge",
   "private": true,
   "repository": {
     "type": "git",

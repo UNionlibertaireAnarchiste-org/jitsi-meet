@@ -1,0 +1,77 @@
+/* LiberChat Vidéo - Thème personnalisé Rouge/Noir */
+
+:root {
+    --primary-color: #8B0000;
+    --secondary-color: #000000;
+    --accent-color: #FF0000;
+}
+
+/* Couleurs principales */
+.toolbox-background {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.header {
+    background-color: var(--secondary-color);
+}
+
+/* Boutons */
+.toolbox-button {
+    background-color: var(--primary-color);
+    border: 1px solid #FF0000;
+}
+
+.toolbox-button:hover {
+    background-color: #FF0000;
+}
+
+/* Interface de chat */
+.chat-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-left: 3px solid #FF0000;
+}
+
+/* Participants */
+.participant-container {
+    border: 2px solid #8B0000;
+}
+
+/* Logo personnalisé */
+.watermark {
+    background-image: url('https://raw.githubusercontent.com/UNionlibertaireAnarchiste-org/jitsi-meet/main/images/liberchat-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 40px;
+}
+
+/* Page d'accueil */
+.welcome-page {
+    background: linear-gradient(135deg, #000000, #8B0000);
+}
+
+.welcome-page .header {
+    color: white;
+}
+
+/* Notifications */
+.notification {
+    background-color: #8B0000;
+    border-left: 4px solid #FF0000;
+}
+
+/* Barre de progression */
+.progress-bar {
+    background-color: #FF0000;
+}
+
+/* Modales */
+.modal {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    background-color: #000000;
+    border: 2px solid #8B0000;
+    color: white;
+}
