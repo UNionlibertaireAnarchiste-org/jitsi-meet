@@ -6,72 +6,102 @@
     --accent-color: #FF0000;
 }
 
-/* Couleurs principales */
-.toolbox-background {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+/* Barre d'outils principale */
+.new-toolbox {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
 }
 
+.toolbox-content-wrapper {
+    background: var(--primary-color) !important;
+}
+
+/* Header/En-tête */
 .header {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color) !important;
 }
 
-/* Boutons */
+/* Boutons de la barre d'outils */
 .toolbox-button {
-    background-color: var(--primary-color);
-    border: 1px solid #FF0000;
+    background-color: var(--primary-color) !important;
+    border: 1px solid var(--accent-color) !important;
 }
 
 .toolbox-button:hover {
-    background-color: #FF0000;
+    background-color: var(--accent-color) !important;
+}
+
+/* Boutons génériques */
+.button, .primary-button {
+    background-color: var(--primary-color) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.button:hover, .primary-button:hover {
+    background-color: var(--accent-color) !important;
 }
 
 /* Interface de chat */
-.chat-container {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-left: 3px solid #FF0000;
+.chat-panel, .chat-container {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border-left: 3px solid var(--accent-color) !important;
 }
 
-/* Participants */
-.participant-container {
-    border: 2px solid #8B0000;
-}
-
-/* Logo personnalisé */
-.watermark {
-    background-image: url('https://raw.githubusercontent.com/UNionlibertaireAnarchiste-org/jitsi-meet/main/images/liberchat-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 120px;
-    height: 40px;
+/* Participants et vignettes */
+.participant, .participant-container, .thumbnail {
+    border: 2px solid var(--primary-color) !important;
 }
 
 /* Page d'accueil */
-.welcome-page {
-    background: linear-gradient(135deg, #000000, #8B0000);
+.welcome-page, .premeeting-screen {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
 }
 
-.welcome-page .header {
-    color: white;
+.welcome-page .header, .premeeting-screen .header {
+    color: white !important;
+}
+
+/* Titre principal */
+.welcome-page h1, .premeeting-screen h1 {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 /* Notifications */
-.notification {
-    background-color: #8B0000;
-    border-left: 4px solid #FF0000;
+.notification, .toast {
+    background-color: var(--primary-color) !important;
+    border-left: 4px solid var(--accent-color) !important;
+    color: white !important;
 }
 
 /* Barre de progression */
-.progress-bar {
-    background-color: #FF0000;
+.progress-bar, .progress-indicator {
+    background-color: var(--accent-color) !important;
 }
 
-/* Modales */
-.modal {
-    background-color: rgba(0, 0, 0, 0.9);
+/* Modales et dialogues */
+.modal, .dialog {
+    background-color: rgba(0, 0, 0, 0.9) !important;
 }
 
-.modal-content {
-    background-color: #000000;
-    border: 2px solid #8B0000;
-    color: white;
+.modal-content, .dialog-content {
+    background-color: var(--secondary-color) !important;
+    border: 2px solid var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Menu et dropdowns */
+.menu, .dropdown-menu {
+    background-color: var(--secondary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+}
+
+.menu-item:hover, .dropdown-item:hover {
+    background-color: var(--primary-color) !important;
+}
+
+/* Personnalisation globale pour forcer le thème */
+body {
+    --primary-color: #8B0000 !important;
+    --secondary-color: #000000 !important;
+    --accent-color: #FF0000 !important;
 }
