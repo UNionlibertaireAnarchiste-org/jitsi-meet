@@ -31,71 +31,85 @@
 }
 
 /* Boutons génériques */
-.button, .primary-button {
+.button,
+.primary-button {
     background-color: var(--primary-color) !important;
     border-color: var(--accent-color) !important;
 }
 
-.button:hover, .primary-button:hover {
+.button:hover,
+.primary-button:hover {
     background-color: var(--accent-color) !important;
 }
 
 /* Interface de chat */
-.chat-panel, .chat-container {
+.chat-panel,
+.chat-container {
     background-color: rgba(0, 0, 0, 0.9) !important;
     border-left: 3px solid var(--accent-color) !important;
 }
 
 /* Participants et vignettes */
-.participant, .participant-container, .thumbnail {
+.participant,
+.participant-container,
+.thumbnail {
     border: 2px solid var(--primary-color) !important;
 }
 
 /* Page d'accueil */
-.welcome-page, .premeeting-screen {
+.welcome-page,
+.premeeting-screen {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
 }
 
-.welcome-page .header, .premeeting-screen .header {
+.welcome-page .header,
+.premeeting-screen .header {
     color: white !important;
 }
 
 /* Titre principal */
-.welcome-page h1, .premeeting-screen h1 {
+.welcome-page h1,
+.premeeting-screen h1 {
     color: white !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Notifications */
-.notification, .toast {
+.notification,
+.toast {
     background-color: var(--primary-color) !important;
     border-left: 4px solid var(--accent-color) !important;
     color: white !important;
 }
 
 /* Barre de progression */
-.progress-bar, .progress-indicator {
+.progress-bar,
+.progress-indicator {
     background-color: var(--accent-color) !important;
 }
 
 /* Modales et dialogues */
-.modal, .dialog {
+.modal,
+.dialog {
     background-color: rgba(0, 0, 0, 0.9) !important;
 }
 
-.modal-content, .dialog-content {
+.modal-content,
+.dialog-content {
     background-color: var(--secondary-color) !important;
     border: 2px solid var(--primary-color) !important;
     color: white !important;
 }
 
 /* Menu et dropdowns */
-.menu, .dropdown-menu {
+.menu,
+.dropdown-menu {
     background-color: var(--secondary-color) !important;
     border: 1px solid var(--primary-color) !important;
 }
 
-.menu-item:hover, .dropdown-item:hover {
+.menu-item:hover,
+.dropdown-item:hover {
     background-color: var(--primary-color) !important;
 }
 
@@ -107,8 +121,11 @@ body {
 }
 
 /* FORCER LE LOGO LIBERCHAT */
-.welcome-page-logo, .watermark, .brand-watermark, .logo {
-    background-image: url('../images/liberchat-logo.svg') !important;
+.welcome-page-logo,
+.watermark,
+.brand-watermark,
+.logo {
+    background-image: url('../images/liberchat-logo.png') !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -125,25 +142,280 @@ body {
 }
 
 /* ARRIÈRE-PLAN PRINCIPAL */
-#react, .App, .welcome-page, .premeeting-screen {
+#react,
+.App,
+.welcome-page,
+.premeeting-screen {
     background: linear-gradient(135deg, #000000, #8B0000) !important;
 }
 
 /* TITRE PRINCIPAL VISIBLE */
-.welcome-page h1, .premeeting-screen h1, .welcome-page-title {
+.welcome-page h1,
+.premeeting-screen h1,
+.welcome-page-title {
     color: #FFFFFF !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
     font-weight: bold !important;
 }
 
 /* BOUTONS ROUGES VISIBLES */
-button, .button, .primary-button, .secondary-button {
+button,
+.button,
+.primary-button,
+.secondary-button {
     background-color: #8B0000 !important;
     border: 2px solid #FF0000 !important;
     color: white !important;
 }
 
-button:hover, .button:hover, .primary-button:hover {
+button:hover,
+.button:hover,
+.primary-button:hover {
     background-color: #FF0000 !important;
     border-color: #8B0000 !important;
+}
+
+/* ÉLIMINATION COMPLÈTE DES COULEURS BLEUES */
+
+/* Forcer tous les éléments bleus à être rouges */
+*[style*="blue"],
+*[class*="blue"],
+*[id*="blue"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: white !important;
+}
+
+/* Liens et éléments interactifs */
+a,
+a:visited,
+a:hover,
+a:active {
+    color: #FF0000 !important;
+}
+
+/* Boutons spécifiques Jitsi */
+.toolbox-button,
+.overflow-menu-item,
+.settings-button {
+    background-color: #8B0000 !important;
+    border: 1px solid #FF0000 !important;
+    color: white !important;
+}
+
+.toolbox-button:hover,
+.overflow-menu-item:hover,
+.settings-button:hover {
+    background-color: #FF0000 !important;
+    border-color: #8B0000 !important;
+}
+
+/* Indicateurs et badges */
+.badge,
+.indicator,
+.notification-badge {
+    background-color: #FF0000 !important;
+    color: white !important;
+}
+
+/* Barres de progression et sliders */
+.slider,
+.progress,
+.loading-bar {
+    background-color: #8B0000 !important;
+}
+
+.slider-thumb,
+.progress-fill {
+    background-color: #FF0000 !important;
+}
+
+/* Éléments de formulaire */
+input,
+select,
+textarea {
+    background-color: #000000 !important;
+    border: 1px solid #8B0000 !important;
+    color: white !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #FF0000 !important;
+    box-shadow: 0 0 5px #FF0000 !important;
+}
+
+/* Tabs et navigation */
+.tab,
+.nav-item,
+.menu-tab {
+    background-color: #000000 !important;
+    border-bottom: 2px solid #8B0000 !important;
+    color: white !important;
+}
+
+.tab.active,
+.nav-item.active,
+.menu-tab.active {
+    background-color: #8B0000 !important;
+    border-bottom-color: #FF0000 !important;
+}
+
+/* Panels et sidebars */
+.panel,
+.sidebar,
+.side-panel {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid #8B0000 !important;
+}
+
+/* Tooltips */
+.tooltip,
+.popover {
+    background-color: #000000 !important;
+    border: 1px solid #FF0000 !important;
+    color: white !important;
+}
+
+/* Éléments spécifiques avec couleurs système */
+.primary,
+.info,
+.success,
+.warning,
+.danger {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: white !important;
+}
+
+/* Forcer les variables CSS communes */
+:root,
+* {
+    --blue: #8B0000 !important;
+    --primary: #8B0000 !important;
+    --info: #8B0000 !important;
+    --link-color: #FF0000 !important;
+    --brand-primary: #8B0000 !important;
+    --brand-secondary: #FF0000 !important;
+}
+
+/* Éléments avec background-color inline */
+*[style*="background-color: blue"],
+*[style*="background-color: #0000FF"],
+*[style*="background-color: #007bff"],
+*[style*="background-color: rgb(0, 123, 255)"] {
+    background-color: #8B0000 !important;
+}
+
+/* Éléments avec color inline */
+*[style*="color: blue"],
+*[style*="color: #0000FF"],
+*[style*="color: #007bff"],
+*[style*="color: rgb(0, 123, 255)"] {
+    color: #FF0000 !important;
+}
+
+/* RÈGLES ULTRA-SPÉCIFIQUES POUR JITSI */
+.welcome-page .welcome-page-content,
+.premeeting-screen .premeeting-screen-content {
+    background: linear-gradient(135deg, #000000, #8B0000) !important;
+}
+
+/* Tous les SVG et icônes */
+svg,
+.icon {
+    fill: #FF0000 !important;
+    color: #FF0000 !important;
+}
+
+/* Forcer TOUS les éléments à ne jamais être bleus */
+* {
+    background-color: inherit !important;
+    border-color: inherit !important;
+}
+
+*:not(.welcome-page):not(.premeeting-screen):not(body):not(html) {
+    background-color: transparent !important;
+}
+
+/* Règle finale pour capturer tout */
+*[class],
+*[id],
+* {
+    color: white !important;
+}
+
+button *,
+.button *,
+.toolbox-button * {
+    color: white !important;
+    fill: white !important;
+}
+
+/* STYL
+E POUR LE NOM DE LA SALLE */
+.css-1o8z3g3-roomName,
+*[class*="roomName"],
+*[class*="room-name"] {
+    color: #FFFFFF !important;
+    background-color: rgba(139, 0, 0, 0.8) !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    border: 2px solid #FF0000 !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Hover effect pour le nom de la salle */
+.css-1o8z3g3-roomName:hover,
+*[class*="roomName"]:hover,
+*[class*="room-name"]:hover {
+    background-color: rgba(255, 0, 0, 0.8) !important;
+    border-color: #8B0000 !important;
+    transform: scale(1.05) !important;
+    transition: all 0.3s ease !important;
+}
+
+/*
+ CHANGER LE TEXTE DU NOM DE LA SALLE */
+.css-1o8z3g3-roomName::before {
+    content: "Salle LiberChat - " !important;
+    color: #FF0000 !important;
+    font-weight: bold !important;
+}
+
+/* Masquer le texte original et le remplacer */
+.css-1o8z3g3-roomName {
+    font-size: 0 !important;
+    /* Masque le texte original */
+}
+
+.css-1o8z3g3-roomName::after {
+    content: "Vidéoconférence" !important;
+    font-size: 16px !important;
+    color: #FFFFFF !important;
+    font-weight: bold !important;
+    display: block !important;
+}
+
+/* Alternative : remplacer complètement le contenu */
+.css-1o8z3g3-roomName {
+    text-indent: -9999px !important;
+    /* Cache le texte original */
+    position: relative !important;
+}
+
+.css-1o8z3g3-roomName::before {
+    content: "LiberChat Vidéo - Salle" !important;
+    text-indent: 0 !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    font-size: 16px !important;
+    color: #FFFFFF !important;
+    font-weight: bold !important;
+    white-space: nowrap !important;
 }

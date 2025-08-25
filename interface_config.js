@@ -22,12 +22,12 @@ var interfaceConfig = {
      * Note: this mode is experimental and subject to breakage.
      */
     AUTO_PIN_LATEST_SCREEN_SHARE: 'remote-only',
-    BRAND_WATERMARK_LINK: 'https://raw.githubusercontent.com/UNionlibertaireAnarchiste-org/jitsi-meet/main/images/liberchat-logo.png',
+    BRAND_WATERMARK_LINK: 'images/liberchat-logo.png',
 
     CLOSE_PAGE_GUEST_HINT: false, // A html text to be shown to guests on the close page, false disables it
 
     DEFAULT_BACKGROUND: '#040404',
-    DEFAULT_WELCOME_PAGE_LOGO_URL: 'https://raw.githubusercontent.com/UNionlibertaireAnarchiste-org/jitsi-meet/main/images/liberchat-logo.png',
+    DEFAULT_WELCOME_PAGE_LOGO_URL: 'images/liberchat-logo.png',
 
     DISABLE_DOMINANT_SPEAKER_INDICATOR: false,
 
