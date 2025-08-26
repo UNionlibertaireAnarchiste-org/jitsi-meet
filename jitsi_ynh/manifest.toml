@@ -1,0 +1,118 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "liberchat-video"
+name = "LiberChat Vidéo"
+description.en = "Libre software (Apache) WebRTC JavaScript app using Jitsi Videobridge for high quality, secure, and scalable video conferences"
+description.fr = "Logiciel libre (Apache) dont Jitsi Videobridge, avec WebRTC Javascript, propose des vidéos-conférences de haute qualité, sécurisées et évolutives"
+
+version = "2.0.10078~ynh1"
+
+maintainers = []
+
+[upstream]
+license = "Apache-2.0"
+website = "https://jitsi.org/"
+demo = "https://meet.jit.si/"
+userdoc = "https://jitsi.org/user-faq/"
+code = "https://github.com/jitsi/jitsi-meet"
+
+[integration]
+yunohost = ">= 11.2.30"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = false
+
+ldap = true
+
+sso = false
+
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+    [resources.sources]
+    [resources.sources.jitsi-meet-web]
+    url = "https://download.jitsi.org/stable/jitsi-meet-web_1.0.8448-1_all.deb"
+    sha256 = "71cf6625ecac2b7fa384675d14e1fd48ed69de6eb6c6c5ae67ae3e1a45dee29a"
+    format = "whatever"
+    extract = false
+    rename = "jitsi-meet-web.deb"
+
+    [resources.sources.jitsi-sctp]
+    url = "https://github.com/sctplab/usrsctp/archive/2e1ab1050bbb6c710f6a475f1601acf1ae7ecb78.zip"
+    sha256 = "9d5ae6125894e66dcc4142f3d075df1a95ea29e778126830cc374b98ccc39612"
+
+    [resources.sources.jitsi-jicofo]
+    url = "https://download.jitsi.org/stable/jicofo_1.0-1124-1_all.deb"
+    sha256 = "a674a9f6768e182e15f0c96b05567d7b8424e0665241d7a94b6c6871049fc37d"
+    format = "whatever"
+    extract = false
+    rename = "jitsi-jicofo.deb"
+
+    [resources.sources.jitsi-videobridge]
+    url = "https://download.jitsi.org/stable/jitsi-videobridge2_2.3-209-gb5fbe618-1_all.deb"
+    sha256 = "0ec1e919d5669215cda2f045d95130f7aa6b68a77a5a954c77157e4e7c5bce2d"
+    format = "whatever"
+    extract = false
+    rename = "jitsi-videobridge.deb"
+
+    [resources.sources.usrsctp]
+    url = "https://github.com/sctplab/usrsctp/archive/2e1ab1050bbb6c710f6a475f1601acf1ae7ecb78.zip"
+    sha256 = "9d5ae6125894e66dcc4142f3d075df1a95ea29e778126830cc374b98ccc39612"
+
+    [resources.sources.jitsi-meet-prosody]
+    url = "https://download.jitsi.org/stable/jitsi-meet-prosody_1.0.8448-1_all.deb"
+    sha256 = "113e3503a3106e5cf7570fd91c8bd7bf4e4a938d52f1d0717a6a64830c296bcf"
+    format = "whatever"
+    extract = false
+    rename = "jitsi-meet-prosody.deb"
+
+    [resources.sources.mod_auth_ldap]
+    url = "https://hg.prosody.im/prosody-modules/raw-file/tip/mod_auth_ldap/mod_auth_ldap.lua"
+    sha256 = "49c67ec86ec75ac8de93803be2ac7f907d1e9d3d22cd4c88fd48aaeed7a411e3"
+    format = "whatever"
+    extract = false
+    rename = "mod_auth_ldap.lua"
+
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.ports]
+    main.default = 4443
+    main.exposed = "TCP"
+    videobridge.default = 10000
+    videobridge.exposed = "UDP"
+    component.default = 5347
+
+    [resources.apt]
+    packages = [
+        "openjdk-8-jre-headless\\|openjdk-11-jre-headless\\|openjdk-17-jre-headless",
+        "debconf",
+        "procps",
+        "uuid-runtime",
+        "lua-ldap",
+        "prosody",
+        "binutils",
+    ]
+
+    packages_from_raw_bash = """
+        if [[ "$YNH_ARCH" == "armhf" ]] || [[ "$YNH_ARCH" == "arm64" ]]; then
+           echo automake autoconf build-essential libtool git maven m4
+        fi
+    """

@@ -1,0 +1,447 @@
+/* LiberChat Vidéo - Thème optimisé pour la lisibilité */
+
+:root {
+    /* Couleurs principales */
+    --liberchat-primary: #8B0000;
+    --liberchat-secondary: #000000;
+    --liberchat-accent: #FF0000;
+    --liberchat-text: #FFFFFF;
+    --liberchat-text-secondary: #E0E0E0;
+    
+    /* Couleurs d'interface */
+    --liberchat-bg-main: linear-gradient(135deg, #000000, #1a0000);
+    --liberchat-bg-panel: rgba(0, 0, 0, 0.85);
+    --liberchat-bg-button: #8B0000;
+    --liberchat-bg-button-hover: #B22222;
+    
+    /* Typographie améliorée */
+    --liberchat-font-size-base: 14px;
+    --liberchat-font-size-large: 16px;
+    --liberchat-font-size-small: 12px;
+    --liberchat-line-height: 1.5;
+    
+    /* Espacements */
+    --liberchat-spacing-xs: 4px;
+    --liberchat-spacing-sm: 8px;
+    --liberchat-spacing-md: 16px;
+    --liberchat-spacing-lg: 24px;
+    
+    /* Bordures et ombres */
+    --liberchat-border-radius: 6px;
+    --liberchat-border: 1px solid var(--liberchat-accent);
+    --liberchat-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* === TYPOGRAPHIE AMÉLIORÉE === */
+body {
+    font-size: var(--liberchat-font-size-base);
+    line-height: var(--liberchat-line-height);
+    color: var(--liberchat-text);
+    background: var(--liberchat-bg-main);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--liberchat-text);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--liberchat-spacing-md);
+}
+
+p, span, div {
+    color: var(--liberchat-text);
+    line-height: var(--liberchat-line-height);
+}
+
+/* === INTERFACE PRINCIPALE === */
+.welcome-page,
+.premeeting-screen {
+    background: var(--liberchat-bg-main);
+}
+
+.welcome-page h1,
+.premeeting-screen h1 {
+    color: var(--liberchat-text);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: var(--liberchat-spacing-lg);
+}
+
+/* === BOUTONS OPTIMISÉS === */
+button,
+.button,
+.primary-button {
+    background-color: var(--liberchat-bg-button);
+    border: var(--liberchat-border);
+    border-radius: var(--liberchat-border-radius);
+    color: var(--liberchat-text);
+    font-size: var(--liberchat-font-size-base);
+    font-weight: 500;
+    padding: var(--liberchat-spacing-sm) var(--liberchat-spacing-md);
+    transition: all 0.2s ease;
+    box-shadow: var(--liberchat-shadow);
+}
+
+button:hover,
+.button:hover,
+.primary-button:hover {
+    background-color: var(--liberchat-bg-button-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* === BARRE D'OUTILS === */
+.new-toolbox,
+.toolbox-content-wrapper {
+    background: var(--liberchat-bg-panel);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--liberchat-accent);
+}
+
+.toolbox-button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--liberchat-border-radius);
+    color: var(--liberchat-text);
+    transition: all 0.2s ease;
+}
+
+.toolbox-button:hover {
+    background-color: var(--liberchat-bg-button);
+    border-color: var(--liberchat-accent);
+}
+
+/* === CHAT ET PANNEAUX === */
+.chat-panel,
+.chat-container {
+    background-color: var(--liberchat-bg-panel);
+    border-left: 3px solid var(--liberchat-accent);
+    backdrop-filter: blur(10px);
+}
+
+.chat-message {
+    font-size: var(--liberchat-font-size-base);
+    line-height: var(--liberchat-line-height);
+    padding: var(--liberchat-spacing-sm);
+    margin-bottom: var(--liberchat-spacing-xs);
+}
+
+/* === PARTICIPANTS === */
+.participant,
+.participant-container,
+.thumbnail {
+    border: 2px solid var(--liberchat-primary);
+    border-radius: var(--liberchat-border-radius);
+    overflow: hidden;
+}
+
+.participant-name,
+.displayname {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--liberchat-text);
+    font-size: var(--liberchat-font-size-small);
+    font-weight: 600;
+    padding: var(--liberchat-spacing-xs) var(--liberchat-spacing-sm);
+    border-radius: var(--liberchat-border-radius);
+}
+
+/* === MODALES ET DIALOGUES === */
+.modal,
+.dialog {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content,
+.dialog-content {
+    background-color: var(--liberchat-bg-panel);
+    border: var(--liberchat-border);
+    border-radius: var(--liberchat-border-radius);
+    color: var(--liberchat-text);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* === FORMULAIRES === */
+input,
+select,
+textarea {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--liberchat-primary);
+    border-radius: var(--liberchat-border-radius);
+    color: var(--liberchat-text);
+    font-size: var(--liberchat-font-size-base);
+    padding: var(--liberchat-spacing-sm);
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--liberchat-accent);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--liberchat-text-secondary);
+    opacity: 0.7;
+}
+
+/* === NOTIFICATIONS === */
+.notification,
+.toast {
+    background-color: var(--liberchat-bg-panel);
+    border-left: 4px solid var(--liberchat-accent);
+    color: var(--liberchat-text);
+    border-radius: var(--liberchat-border-radius);
+    box-shadow: var(--liberchat-shadow);
+    font-size: var(--liberchat-font-size-base);
+    line-height: var(--liberchat-line-height);
+}
+
+/* === LOGO LIBERCHAT === */
+.welcome-page-logo,
+.watermark,
+.brand-watermark,
+.logo {
+    background-image: url('../images/liberchat-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px;
+    height: 60px;
+}
+
+/* === NOM DE LA SALLE === */
+.css-1o8z3g3-roomName,
+*[class*="roomName"],
+*[class*="room-name"] {
+    background-color: rgba(139, 0, 0, 0.9);
+    color: var(--liberchat-text);
+    font-size: var(--liberchat-font-size-base);
+    font-weight: 600;
+    padding: var(--liberchat-spacing-sm) var(--liberchat-spacing-md);
+    border-radius: 20px;
+    border: 2px solid var(--liberchat-accent);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: var(--liberchat-shadow);
+    transition: all 0.3s ease;
+}
+
+.css-1o8z3g3-roomName:hover,
+*[class*="roomName"]:hover,
+*[class*="room-name"]:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+    transform: scale(1.02);
+}
+
+/* === ACCESSIBILITÉ === */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    :root {
+        --liberchat-font-size-base: 16px;
+        --liberchat-spacing-md: 12px;
+        --liberchat-spacing-lg: 18px;
+    }
+    
+    .welcome-page h1,
+    .premeeting-screen h1 {
+        font-size: 2rem;
+    }
+}
+
+/* === AMÉLIORATION DES CONTRASTES === */
+.menu,
+.dropdown-menu {
+    background-color: var(--liberchat-bg-panel);
+    border: var(--liberchat-border);
+    border-radius: var(--liberchat-border-radius);
+    box-shadow: var(--liberchat-shadow);
+}
+
+.menu-item,
+.dropdown-item {
+    color: var(--liberchat-text);
+    padding: var(--liberchat-spacing-sm) var(--liberchat-spacing-md);
+    transition: background-color 0.2s ease;
+}
+
+.menu-item:hover,
+.dropdown-item:hover {
+    background-color: var(--liberchat-bg-button);
+    color: var(--liberchat-text);
+}
+
+/* === ÉLIMINATION TOTALE DU BLEU === */
+
+/* Forcer TOUS les éléments bleus à être rouges */
+*[style*="blue"],
+*[style*="#0000FF"],
+*[style*="#007bff"],
+*[style*="#0074E0"],
+*[style*="#4687ED"],
+*[style*="rgb(0, 116, 224)"],
+*[style*="rgb(70, 135, 237)"],
+*[class*="blue"],
+*[id*="blue"] {
+    background-color: var(--liberchat-primary) !important;
+    border-color: var(--liberchat-accent) !important;
+    color: var(--liberchat-text) !important;
+}
+
+/* Variables CSS communes forcées */
+:root {
+    --blue: var(--liberchat-primary) !important;
+    --primary: var(--liberchat-primary) !important;
+    --info: var(--liberchat-primary) !important;
+    --link-color: var(--liberchat-accent) !important;
+    --brand-primary: var(--liberchat-primary) !important;
+    --brand-secondary: var(--liberchat-accent) !important;
+    --welcomePageButtonBg: var(--liberchat-primary) !important;
+    --welcomePageButtonHoverBg: var(--liberchat-accent) !important;
+    --primaryUnsupportedBrowserButtonBgColor: var(--liberchat-primary) !important;
+}
+
+/* Boutons spécifiques avec couleurs bleues */
+.primary-button,
+.welcome-page button,
+.premeeting-screen button,
+button[style*="blue"],
+button[style*="#0074E0"],
+.button-primary {
+    background-color: var(--liberchat-primary) !important;
+    border-color: var(--liberchat-accent) !important;
+    color: var(--liberchat-text) !important;
+}
+
+.primary-button:hover,
+.welcome-page button:hover,
+.premeeting-screen button:hover,
+button[style*="blue"]:hover,
+.button-primary:hover {
+    background-color: var(--liberchat-accent) !important;
+    border-color: var(--liberchat-primary) !important;
+}
+
+/* Liens avec couleurs bleues */
+a[style*="blue"],
+a[style*="#0074E0"],
+.link-primary {
+    color: var(--liberchat-accent) !important;
+}
+
+a[style*="blue"]:hover,
+a[style*="#0074E0"]:hover,
+.link-primary:hover {
+    color: var(--liberchat-text) !important;
+}
+
+/* Éléments avec background bleu inline */
+*[style*="background-color: blue"],
+*[style*="background-color: #0000FF"],
+*[style*="background-color: #007bff"],
+*[style*="background-color: #0074E0"],
+*[style*="background-color: #4687ED"],
+*[style*="background-color: rgb(0, 116, 224)"],
+*[style*="background-color: rgb(70, 135, 237)"] {
+    background-color: var(--liberchat-primary) !important;
+}
+
+/* Éléments avec couleur de texte bleue inline */
+*[style*="color: blue"],
+*[style*="color: #0000FF"],
+*[style*="color: #007bff"],
+*[style*="color: #0074E0"],
+*[style*="color: #4687ED"],
+*[style*="color: rgb(0, 116, 224)"],
+*[style*="color: rgb(70, 135, 237)"] {
+    color: var(--liberchat-accent) !important;
+}
+
+/* Bordures bleues */
+*[style*="border-color: blue"],
+*[style*="border-color: #0074E0"],
+*[style*="border: 1px solid blue"] {
+    border-color: var(--liberchat-accent) !important;
+}
+
+/* SVG et icônes bleues */
+svg[fill*="blue"],
+svg[fill*="#0074E0"],
+.icon[style*="blue"] {
+    fill: var(--liberchat-accent) !important;
+}
+
+/* Classes CSS communes avec bleu */
+.bg-primary,
+.btn-primary,
+.text-primary,
+.border-primary {
+    background-color: var(--liberchat-primary) !important;
+    border-color: var(--liberchat-accent) !important;
+    color: var(--liberchat-text) !important;
+}
+
+.bg-info,
+.btn-info,
+.text-info,
+.border-info {
+    background-color: var(--liberchat-primary) !important;
+    border-color: var(--liberchat-accent) !important;
+    color: var(--liberchat-text) !important;
+}
+
+/* Forcer les couleurs système */
+.primary,
+.info,
+.link {
+    background-color: var(--liberchat-primary) !important;
+    border-color: var(--liberchat-accent) !important;
+    color: var(--liberchat-text) !important;
+}
+
+/* Éléments spécifiques Jitsi avec bleu */
+.welcome-page-header,
+.premeeting-screen-header {
+    background: var(--liberchat-bg-main) !important;
+}
+
+.welcome-page-button,
+.premeeting-button {
+    background-color: var(--liberchat-primary) !important;
+    border-color: var(--liberchat-accent) !important;
+    color: var(--liberchat-text) !important;
+}
+
+/* Règle finale pour capturer TOUT le bleu */
+* {
+    /* Remplacer toutes les propriétés CSS contenant du bleu */
+}
+
+*:not(html):not(body) {
+    /* Forcer l'héritage des couleurs LiberChat */
+}
+
+/* Sélecteurs ultra-spécifiques pour Jitsi Meet */
+.css-*[class*="blue"],
+.css-*[style*="blue"],
+div[class*="primary"],
+button[class*="primary"],
+a[class*="primary"] {
+    background-color: var(--liberchat-primary) !important;
+    border-color: var(--liberchat-accent) !important;
+    color: var(--liberchat-text) !important;
+}

@@ -1,0 +1,75 @@
+#!/bin/bash
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+#=================================================
+# REMOVE SYSTEM CONFIGURATIONS
+#=================================================
+ynh_script_progression "Removing system configurations related to $app..."
+
+ynh_config_remove_logrotate
+
+if ynh_hide_warnings yunohost service status "$app-videobridge" >/dev/null; then
+    yunohost service remove "$app-videobridge"
+fi
+ynh_config_remove_systemd "$app-videobridge"
+
+if ynh_hide_warnings yunohost service status "$app-jicofo" >/dev/null; then
+    yunohost service remove "$app-jicofo"
+fi
+ynh_config_remove_systemd "$app-jicofo"
+
+
+ynh_config_remove_nginx
+
+#=================================================
+# RECONFIGURE PROSODY
+#=================================================
+ynh_script_progression "Reconfiguring Prosody..."
+
+prosodyctl deluser "$focus_user@auth.$domain" || true
+prosodyctl deluser "$videobridge_user@auth.$domain" || true
+
+# Remove domain conf template
+ynh_safe_rm "/etc/prosody/conf.d/$domain.cfg.lua"
+ynh_safe_rm "/etc/prosody/conf.avail/$domain.cfg.lua"
+ynh_safe_rm "/etc/prosody/certs/$domain.key"
+ynh_safe_rm "/etc/prosody/certs/$domain.crt"
+ynh_safe_rm "/var/lib/prosody/$domain.key"
+ynh_safe_rm "/var/lib/prosody/$domain.crt"
+ynh_safe_rm "/var/lib/prosody/$domain.cnf"
+ynh_safe_rm "/etc/prosody/certs/auth.$domain.key"
+ynh_safe_rm "/etc/prosody/certs/auth.$domain.crt"
+ynh_safe_rm "/var/lib/prosody/auth.$domain.key"
+ynh_safe_rm "/var/lib/prosody/auth.$domain.crt"
+ynh_safe_rm "/var/lib/prosody/auth.$domain.cnf"
+ynh_safe_rm "/usr/local/share/ca-certificates/auth.$domain.crt"
+
+update-ca-certificates -f
+
+gpasswd --delete prosody "$app"
+
+ynh_systemctl --service=prosody --action=restart
+
+#=================================================
+# REMOVE DEPENDENCIES
+#=================================================
+ynh_script_progression "Removing dependencies..."
+
+ynh_app_setting_delete --key=require_prosody
+
+ynh_remove_apps
+
+#=================================================
+# REMOVE VARIOUS FILES
+#=================================================
+ynh_script_progression "Removing various files..."
+
+ynh_safe_rm "/etc/$app"
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression "Removal of $app completed"

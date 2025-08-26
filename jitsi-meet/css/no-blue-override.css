@@ -1,0 +1,348 @@
+/* LiberChat - Élimination complète du bleu */
+
+/* === VARIABLES CSS FORCÉES === */
+:root {
+    /* Remplacer toutes les variables bleues par du rouge */
+    --blue: #8B0000 !important;
+    --blue-50: #8B0000 !important;
+    --blue-100: #8B0000 !important;
+    --blue-200: #8B0000 !important;
+    --blue-300: #8B0000 !important;
+    --blue-400: #8B0000 !important;
+    --blue-500: #8B0000 !important;
+    --blue-600: #8B0000 !important;
+    --blue-700: #8B0000 !important;
+    --blue-800: #8B0000 !important;
+    --blue-900: #8B0000 !important;
+    
+    /* Variables primaires */
+    --primary: #8B0000 !important;
+    --primary-50: #8B0000 !important;
+    --primary-100: #8B0000 !important;
+    --primary-200: #8B0000 !important;
+    --primary-300: #8B0000 !important;
+    --primary-400: #8B0000 !important;
+    --primary-500: #8B0000 !important;
+    --primary-600: #8B0000 !important;
+    --primary-700: #8B0000 !important;
+    --primary-800: #8B0000 !important;
+    --primary-900: #8B0000 !important;
+    
+    /* Variables info */
+    --info: #8B0000 !important;
+    --info-50: #8B0000 !important;
+    --info-100: #8B0000 !important;
+    --info-200: #8B0000 !important;
+    --info-300: #8B0000 !important;
+    --info-400: #8B0000 !important;
+    --info-500: #8B0000 !important;
+    --info-600: #8B0000 !important;
+    --info-700: #8B0000 !important;
+    --info-800: #8B0000 !important;
+    --info-900: #8B0000 !important;
+    
+    /* Variables de liens */
+    --link-color: #FF0000 !important;
+    --link-hover-color: #FFFFFF !important;
+    
+    /* Variables de marque */
+    --brand-primary: #8B0000 !important;
+    --brand-secondary: #FF0000 !important;
+    --brand-accent: #FF0000 !important;
+    
+    /* Variables spécifiques Jitsi */
+    --welcomePageButtonBg: #8B0000 !important;
+    --welcomePageButtonHoverBg: #FF0000 !important;
+    --welcomePageButtonFocusOutline: #8B0000 !important;
+    --primaryUnsupportedBrowserButtonBgColor: #8B0000 !important;
+}
+
+/* === SÉLECTEURS UNIVERSELS ANTI-BLEU === */
+
+/* Tous les éléments avec "blue" dans le nom de classe */
+*[class*="blue"],
+*[class*="Blue"],
+*[class*="BLUE"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* Tous les éléments avec "primary" dans le nom de classe */
+*[class*="primary"],
+*[class*="Primary"],
+*[class*="PRIMARY"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* Tous les éléments avec "info" dans le nom de classe */
+*[class*="info"],
+*[class*="Info"],
+*[class*="INFO"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* === COULEURS HEXADÉCIMALES BLEUES === */
+
+/* Toutes les nuances de bleu courantes */
+*[style*="#0000FF"],
+*[style*="#0074E0"],
+*[style*="#4687ED"],
+*[style*="#007bff"],
+*[style*="#0052CC"],
+*[style*="#00225A"],
+*[style*="#1976d2"],
+*[style*="#2196f3"],
+*[style*="#03a9f4"],
+*[style*="#00bcd4"],
+*[style*="#0d6efd"],
+*[style*="#0a58ca"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* === COULEURS RGB BLEUES === */
+*[style*="rgb(0, 116, 224)"],
+*[style*="rgb(70, 135, 237)"],
+*[style*="rgb(0, 123, 255)"],
+*[style*="rgb(13, 110, 253)"],
+*[style*="rgb(25, 118, 210)"],
+*[style*="rgba(0, 116, 224"],
+*[style*="rgba(70, 135, 237"],
+*[style*="rgba(0, 123, 255"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* === COULEURS HSL BLEUES === */
+*[style*="hsl(210"],
+*[style*="hsl(211"],
+*[style*="hsl(212"],
+*[style*="hsl(213"],
+*[style*="hsl(214"],
+*[style*="hsl(215"],
+*[style*="hsl(216"],
+*[style*="hsl(217"],
+*[style*="hsl(218"],
+*[style*="hsl(219"],
+*[style*="hsl(220"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* === ÉLÉMENTS SPÉCIFIQUES === */
+
+/* Boutons */
+button[style*="blue"],
+button[class*="primary"],
+button[class*="info"],
+.btn-primary,
+.btn-info,
+.button-primary,
+.primary-button {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+button[style*="blue"]:hover,
+button[class*="primary"]:hover,
+button[class*="info"]:hover,
+.btn-primary:hover,
+.btn-info:hover,
+.button-primary:hover,
+.primary-button:hover {
+    background-color: #FF0000 !important;
+    border-color: #8B0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* Liens */
+a[style*="blue"],
+a[class*="primary"],
+a[class*="info"],
+.link-primary,
+.link-info {
+    color: #FF0000 !important;
+}
+
+a[style*="blue"]:hover,
+a[class*="primary"]:hover,
+a[class*="info"]:hover,
+.link-primary:hover,
+.link-info:hover {
+    color: #FFFFFF !important;
+}
+
+/* Arrière-plans */
+.bg-primary,
+.bg-info,
+.bg-blue,
+*[class*="bg-primary"],
+*[class*="bg-info"],
+*[class*="bg-blue"] {
+    background-color: #8B0000 !important;
+}
+
+/* Bordures */
+.border-primary,
+.border-info,
+.border-blue,
+*[class*="border-primary"],
+*[class*="border-info"],
+*[class*="border-blue"] {
+    border-color: #FF0000 !important;
+}
+
+/* Texte */
+.text-primary,
+.text-info,
+.text-blue,
+*[class*="text-primary"],
+*[class*="text-info"],
+*[class*="text-blue"] {
+    color: #FF0000 !important;
+}
+
+/* === SVG ET ICÔNES === */
+svg[fill*="blue"],
+svg[fill*="#0074E0"],
+svg[fill*="#4687ED"],
+svg[stroke*="blue"],
+svg[stroke*="#0074E0"],
+.icon[style*="blue"],
+.icon[class*="primary"],
+.icon[class*="info"] {
+    fill: #FF0000 !important;
+    stroke: #FF0000 !important;
+    color: #FF0000 !important;
+}
+
+/* === PSEUDO-ÉLÉMENTS === */
+*[class*="primary"]::before,
+*[class*="primary"]::after,
+*[class*="info"]::before,
+*[class*="info"]::after,
+*[class*="blue"]::before,
+*[class*="blue"]::after {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* === ÉTATS INTERACTIFS === */
+*[class*="primary"]:focus,
+*[class*="info"]:focus,
+*[class*="blue"]:focus {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3) !important;
+    outline: none !important;
+}
+
+*[class*="primary"]:active,
+*[class*="info"]:active,
+*[class*="blue"]:active {
+    background-color: #FF0000 !important;
+    border-color: #8B0000 !important;
+}
+
+/* === ÉLÉMENTS JITSI SPÉCIFIQUES === */
+
+/* Page d'accueil */
+.welcome-page *[style*="blue"],
+.welcome-page *[class*="primary"],
+.premeeting-screen *[style*="blue"],
+.premeeting-screen *[class*="primary"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* Barre d'outils */
+.toolbox *[style*="blue"],
+.toolbox *[class*="primary"],
+.new-toolbox *[style*="blue"],
+.new-toolbox *[class*="primary"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* Modales */
+.modal *[style*="blue"],
+.modal *[class*="primary"],
+.dialog *[style*="blue"],
+.dialog *[class*="primary"] {
+    background-color: #8B0000 !important;
+    border-color: #FF0000 !important;
+    color: #FFFFFF !important;
+}
+
+/* === RÈGLE FINALE CATCH-ALL === */
+
+/* Attraper tout ce qui pourrait échapper */
+* {
+    /* Remplacer dynamiquement les couleurs bleues */
+}
+
+*:not(html):not(body):not(script):not(style) {
+    /* Forcer l'héritage des couleurs LiberChat */
+}
+
+/* Sélecteur de dernière chance */
+*[style],
+*[class] {
+    /* S'assurer que rien de bleu ne passe */
+}
+
+/* === ANIMATIONS ET TRANSITIONS === */
+@keyframes fadeInRed {
+    from { background-color: #000000; }
+    to { background-color: #8B0000; }
+}
+
+*[class*="primary"],
+*[class*="info"],
+*[class*="blue"] {
+    animation: fadeInRed 0.3s ease-in-out;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+    *[class*="primary"],
+    *[class*="info"],
+    *[class*="blue"] {
+        background-color: #8B0000 !important;
+        border-color: #FF0000 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+@media (max-width: 480px) {
+    *[class*="primary"],
+    *[class*="info"],
+    *[class*="blue"] {
+        background-color: #8B0000 !important;
+        border-color: #FF0000 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+/* === PRINT STYLES === */
+@media print {
+    *[class*="primary"],
+    *[class*="info"],
+    *[class*="blue"] {
+        background-color: #8B0000 !important;
+        border-color: #FF0000 !important;
+        color: #FFFFFF !important;
+    }
+}

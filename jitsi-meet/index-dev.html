@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#8B0000">
+    
+    <!-- LiberChat Vidéo Meta -->
+    <title>LiberChat Vidéo - Vidéoconférence Sécurisée</title>
+    <meta name="description" content="LiberChat Vidéo - Solution de vidéoconférence sécurisée et privée">
+    <meta name="keywords" content="vidéoconférence, chat vidéo, réunion en ligne, liberchat">
+    
+    <!-- Base URL -->
+    <base href="/" />
+    
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="shortcut icon" href="favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/no-blue-override.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Configuration Scripts -->
+    <script src="config.js"></script>
+    <script src="interface_config.js"></script>
+    
+    <!-- Global Variables -->
+    <script>
+        window.EXCALIDRAW_ASSET_PATH = 'libs/';
+        
+        // Configuration par défaut si non définie
+        if (typeof config === 'undefined') {
+            window.config = {
+                hosts: {
+                    domain: 'localhost:8080',
+                    muc: 'conference.localhost:8080'
+                },
+                bosh: '//localhost:8080/http-bind',
+                websocket: 'wss://localhost:8080/xmpp-websocket',
+                clientNode: 'http://jitsi.org/jitsimeet'
+            };
+        }
+        
+        // Interface config par défaut si non définie
+        if (typeof interfaceConfig === 'undefined') {
+            window.interfaceConfig = {
+                APP_NAME: 'LiberChat Vidéo',
+                BRAND_WATERMARK_LINK: 'images/liberchat-logo.png',
+                DEFAULT_BACKGROUND: '#040404',
+                DEFAULT_WELCOME_PAGE_LOGO_URL: 'images/liberchat-logo.png',
+                JITSI_WATERMARK_LINK: 'https://liberchat.org',
+                PROVIDER_NAME: 'LiberChat',
+                SHOW_BRAND_WATERMARK: true,
+                SHOW_JITSI_WATERMARK: false,
+                SHOW_POWERED_BY: false,
+                VERTICAL_FILMSTRIP: true,
+                VIDEO_LAYOUT_FIT: 'both'
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #000000, #8B0000);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        color: white;
+        font-family: 'Inter', sans-serif;
+    ">
+        <img src="images/liberchat-logo.png" alt="LiberChat" style="width: 120px; height: 60px; margin-bottom: 20px;">
+        <h1 style="font-size: 2rem; margin-bottom: 10px; text-align: center;">LiberChat Vidéo</h1>
+        <p style="font-size: 1rem; opacity: 0.8; text-align: center;">Chargement de l'interface améliorée...</p>
+        <div style="
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #FF0000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        "></div>
+    </div>
+
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- Main App Container -->
+    <div id="react"></div>
+
+    <!-- Scripts -->
+    <script src="js/no-blue-enforcer.js"></script>
+    <script src="libs/lib-jitsi-meet.min.js?v=139"></script>
+    <script src="libs/app.bundle.min.js?v=139"></script>
+
+    <script>
+        // Masquer l'écran de chargement une fois que l'app est chargée
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            // Fonction pour masquer l'écran de chargement
+            const hideLoadingScreen = () => {
+                if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    loadingScreen.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                    }, 500);
+                }
+            };
+
+            // Vérifier si JitsiMeetJS est disponible
+            const checkJitsiMeet = () => {
+                if (typeof JitsiMeetJS !== 'undefined' && JitsiMeetJS.app) {
+                    try {
+                        JitsiMeetJS.app.renderEntryPoint({
+                            Component: JitsiMeetJS.app.entryPoints.APP
+                        });
+                        hideLoadingScreen();
+                    } catch (error) {
+                        console.warn('Erreur lors du rendu de l\'app:', error);
+                        hideLoadingScreen();
+                    }
+                } else {
+                    // Réessayer après 100ms
+                    setTimeout(checkJitsiMeet, 100);
+                }
+            };
+
+            // Démarrer la vérification
+            checkJitsiMeet();
+
+            // Masquer l'écran de chargement après 10 secondes maximum
+            setTimeout(hideLoadingScreen, 10000);
+
+            // Service Worker pour PWA
+            const isEmbedded = () => {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            };
+
+            const isElectron = navigator.userAgent.includes('Electron');
+            const shouldRegisterWorker = !isElectron && !isEmbedded() && 'serviceWorker' in navigator;
+
+            if (shouldRegisterWorker) {
+                navigator.serviceWorker.register('pwa-worker.js').catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+            }
+        });
+
+        // Gestion des erreurs globales
+        window.addEventListener('error', (event) => {
+            console.error('Erreur JavaScript:', event.error);
+        });
+
+        // Mesure des performances
+        window.addEventListener('load', () => {
+            const loadTime = performance.now();
+            console.log(`(TIME) window loaded event: ${loadTime}`);
+        });
+    </script>
+</body>
+</html>
